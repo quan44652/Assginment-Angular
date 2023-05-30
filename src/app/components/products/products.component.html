@@ -1,0 +1,42 @@
+<div class="wrapper">
+    <div class="container">
+        <h4 *ngIf="title != ''" class="title">{{title}}</h4>
+        <div class="list-products">
+            <div *ngFor="let item of products,let i = index"
+                class="list-products--item">
+                <div class="wrapper-product" *ngIf="i < 10">
+                    <div class="sticker">
+                        <img src={{item.sticker}} alt>
+                    </div>
+                    <div class="avatar">
+                        <img src={{item.image}}
+                            alt>
+                    </div>
+                    <a [routerLink]="['/category/',item._id,]"
+                        class="name">{{item.name}}</a>
+                    <p class="price">{{item.priceNew | number }} ₫ <span>{{item.priceOld
+                            | number}}
+                            ₫</span></p>
+                    <div class="note">
+                        <p *ngIf="item.promotionId.length > 0"><span>KM</span>{{item.promotionId[0].name.slice(" ",40)}}
+                            ...<strong>
+                                và {{item.promotionId.length}} km khác</strong></p>
+                    </div>
+                </div>
+
+                <div class="promote" *ngIf="item.promotionId.length > 0">
+                    <a [routerLink]="['/category/',item._id]">
+                        <ul>
+                            <li
+                                *ngFor="let promotionItem of item.promotionId ,let i = index"><p
+                                    *ngIf="i <= 2"
+                                    class="note"><span>KM</span>
+                                    {{promotionItem.name}}</p></li>
+                        </ul>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

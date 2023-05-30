@@ -1,0 +1,63 @@
+<app-top-navigate></app-top-navigate>
+<div class="wrapper">
+    <div class="back">
+        <a routerLink="/"><span><fa-icon [icon]="faChevronLeft"></fa-icon></span>
+            Quay lại</a>
+    </div>
+    <div class="cart-layout">
+        <div class="cart-info">
+            <div class="cart-icon">
+                <fa-icon [icon]="faCircleCheck"></fa-icon>
+                <span>Giỏ hàng</span>
+            </div>
+            <!-- <div class="no-cart">
+        <img src="../../../assets/images/no-item.png" alt>
+        <h4>Hiện chưa có sản phẩm nào trong giỏ hàng</h4>
+    </div> -->
+            <div class="cart-items">
+                <div class="item" *ngFor="let item of products">
+                    <div class="item-img">
+                        <img
+                            src={{item.image}}
+                            alt>
+                        <h4>{{item.name}}</h4>
+                        <h6>{{item.priceNew | number}}₫</h6>
+                        <span>số lượng</span>
+                        <input value="2" min="0" type="number">
+                    </div>
+
+                    <ul class="item-info">
+                        <li *ngFor="let promotionItem of item.promotionId"><span>KM1</span><p>{{promotionItem}}</p></li>
+
+                    </ul>
+
+                </div>
+            </div>
+            <div class="cart-tatol">
+                <h2>Tổng giá trị: 146,950,000 ₫</h2>
+                <h2>Giảm giá: 0 ₫</h2>
+                <h2>Tổng thanh toán: <span>146,950,000 ₫</span></h2>
+            </div>
+        </div>
+        <div class="cart-form">
+            <h2 class="title">Thông tin đặt hàng</h2>
+            <p class="warning">Bạn cần nhập đầy đủ các trường thông tin có dấu *
+            </p>
+            <form action>
+                <div class="form-control">
+                    <input type="text" placeholder="Họ và tên *">
+                </div>
+                <div class="form-control">
+                    <input type="text" placeholder="Số điện thoại *">
+                </div>
+                <div class="form-control">
+                    <input type="text" placeholder="Email *">
+                </div>
+                <div class="form-control">
+                    <input type="text" placeholder="Địa chỉ nhận hàng *">
+                </div>
+                <button class="btn">Xác nhận và đặt hàng</button>
+            </form>
+        </div>
+    </div>
+</div>

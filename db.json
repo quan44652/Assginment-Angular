@@ -1,0 +1,62 @@
+{
+"products":[
+  {
+    "ad":1,
+    "sticker":"https://hoanghamobile.com/Content/web/sticker/apple.png",
+    "name":"Điện thoại di động iPhone 14 (128GB) - Chính hãng VN/A",
+    "image":"https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2023/03/31/image-removebg-preview.png",
+    "priceNew":"10190000",
+    "priceOld":"19990000",
+    "promote": [
+      "Ưu đãi đến 300.000đ khi mở Ví hoặc thanh toán qua VNPAY","Giảm thêm tới1.000.000đ khi Thu cũ - Lên đời iPhone 11 | 12 | 13 Series", "Giảm thêm tới 800.000đ khi mở thẻ tín dụng TPBank EVO - Duyệt nhanh chỉ 15 phút, LH Cửa hàng hoặc 19002091 để được hỗ trợ"
+    ]
+
+  },
+  {
+    "ad":2,
+    "sticker":"https://hoanghamobile.com/Content/web/sticker/apple.png",
+    "name":"Điện thoại di động iPhone 14 (128GB) - Chính hãng VN/A",
+    "image":"https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2023/02/01/1111.png",
+    "priceNew":"10190000",
+    "priceOld":"19990000",
+    "promote": [
+      "Ưu đãi đến 300.000đ khi mở Ví hoặc thanh toán qua VNPAY","Giảm thêm tới1.000.000đ khi Thu cũ - Lên đời iPhone 11 | 12 | 13 Series", "Giảm thêm tới 800.000đ khi mở thẻ tín dụng TPBank EVO - Duyệt nhanh chỉ 15 phút, LH Cửa hàng hoặc 19002091 để được hỗ trợ"
+    ]
+
+  },
+  {
+    "ad":3,
+    "sticker":"https://hoanghamobile.com/Content/web/sticker/apple.png",
+    "name":"Điện thoại di động iPhone 14 (128GB) - Chính hãng VN/A",
+    "image":"https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/09/07/image-removebg-preview-4.png",
+    "priceNew":"10190000",
+    "priceOld":"19990000",
+    "promote": [
+      "Ưu đãi đến 300.000đ khi mở Ví hoặc thanh toán qua VNPAY","Giảm thêm tới1.000.000đ khi Thu cũ - Lên đời iPhone 11 | 12 | 13 Series", "Giảm thêm tới 800.000đ khi mở thẻ tín dụng TPBank EVO - Duyệt nhanh chỉ 15 phút, LH Cửa hàng hoặc 19002091 để được hỗ trợ","Ưu đãi đến 300.000đ khi mở Ví hoặc thanh toán qua VNPAY","Giảm thêm tới1.000.000đ khi Thu cũ - Lên đời iPhone 11 | 12 | 13 Series", "Giảm thêm tới 800.000đ khi mở thẻ tín dụng TPBank EVO - Duyệt nhanh chỉ 15 phút, LH Cửa hàng hoặc 19002091 để được hỗ trợ"
+    ]
+
+  },
+  {
+    "ad":4,
+    "sticker":"https://hoanghamobile.com/Content/web/sticker/apple.png",
+    "name":"Điện thoại di động iPhone 14 (128GB) - Chính hãng VN/A",
+    "image":"https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2023/03/31/image-removebg-preview.png",
+    "priceNew":"10190000",
+    "priceOld":"19990000",
+    "promote": [
+      "LH Cửa hàng hoặc 19002091 để được hỗ trợ"
+    ]
+
+  },
+  {
+    "ad":5,
+    "sticker":"https://hoanghamobile.com/Content/web/sticker/apple.png",
+    "name":"Điện thoại di động iPhone 14 (128GB) - Chính hãng VN/A",
+    "image":"https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2023/03/08/14-yellow.png",
+    "priceNew":"19190000",
+    "priceOld":"19990000",
+    "promote": []
+
+  }
+]
+}

@@ -1,0 +1,53 @@
+<div class="wrapper">
+    <div class="container">
+        <div class="logo">
+            <a routerLink="/"> <img src="../../../assets/images/logo-text.png"
+                    alt></a>
+        </div>
+        <div
+            class="box-serach">
+            <form action class="form-search">
+                <input [(ngModel)]="searchValue"
+                    placeholder="Hôm nay bạn cần gì?" type="text" name="seach"
+                    (input)="onSearch()">
+                <button><fa-icon [icon]="faSearch"></fa-icon></button>
+            </form>
+            <div class="search-result" *ngIf="products.length > 0 && isShown"
+                (clickOutside)="onClickOutside()">
+                <a (click)="onClickHiden()" [routerLink]="['category',item._id]"
+                    class="search-item"
+                    *ngFor="let item of products">
+                    <div class="avata">
+                        <img
+                            src={{item.image}}
+                            alt />
+                    </div>
+                    <div class="info">
+                        <h4>
+                            {{item.name}}
+                        </h4>
+                        <span>{{item.priceNew | number}} ₫</span>
+                    </div>
+                </a>
+                <p class="search-name">
+                    Hiển thị kết quả tìm kiếm cho <strong>{{searchValue}}</strong>
+                </p>
+            </div>
+
+        </div>
+        <div class="order-tool">
+            <div class="check-order">
+                <span>
+                    <fa-icon [icon]="faTruckFast"></fa-icon>
+                </span>
+                <h4>Kiểm tra đơn hàng</h4>
+            </div>
+            <a routerLink="/cart" class="total-order">
+                <span>
+                    <fa-icon [icon]="faCartShopping"></fa-icon>
+                </span>
+                <h4>0</h4>
+            </a>
+        </div>
+    </div>
+</div>
