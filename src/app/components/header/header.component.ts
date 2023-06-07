@@ -10,7 +10,7 @@ import { ProductService } from 'src/app/services/product.service';
 export class HeaderComponent {
   isShown: boolean = true;
   searchValue:any = null;
-  searchProducts:any = []
+  // searchProducts:any = []
   products:any = []
 
   constructor(private productService:ProductService) {}

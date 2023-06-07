@@ -1,0 +1,14 @@
+.layout-body {
+    display: flex;
+    align-items: start;
+}
+
+
+.navbar {
+    padding: 0;
+}
+
+.content {
+    flex: 1;
+    background-color: #cccccc35;
+}

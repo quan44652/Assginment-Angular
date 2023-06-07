@@ -1,0 +1,42 @@
+<div class="wrapper">
+    <h1 class="title">Add Products</h1>
+    <div class="container">
+        <form>
+            <div class="mb-3">
+                <label class="form-label">Image Sticker </label>
+                <input type="text" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Name Product</label>
+                <input type="text" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Price Product</label>
+                <input value="0" min="0" type="number" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Image Product </label>
+                <input type="text" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Danh mục</label>
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>Open this select menu</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Promotion</label>
+                <ng-select class="form-select" [multiple]="true"
+                    [(ngModel)]="selectedCars">
+                    <ng-option class="ng-option" *ngFor="let car of cars"
+                        [value]="car.id">{{car.name}}</ng-option>
+                </ng-select>
+            </div>
+            <br />Selected car ID: {{selectedCars | json}}
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>

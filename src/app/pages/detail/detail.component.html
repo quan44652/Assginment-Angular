@@ -1,22 +1,5 @@
 
 <body>
-    <!-- <nav>
-        <ul class="nav-ul-detailProduct">
-            <li><a class="nav-detailProduct" href>Trang chủ </a>
-                <p>></p>
-            </li>
-            <li><a class="nav-detailProduct" href>Điện Thoại </a>
-                <p>></p>
-            </li>
-            <li><a class="nav-detailProduct" href>Apple </a>
-                <p>></p>
-            </li>
-            <li><a class="nav-detailProduct" href>IPhone 14 series </a>
-                <p>></p>
-            </li>
-            <li><a class="nav-detailProduct iphone14" href>IPhone 14 chính hãng</a></li>
-        </ul>
-    </nav> -->
     <div class="name-detailProduct">
         <h1>{{product.name}}</h1>
     </div>
@@ -26,7 +9,39 @@
                 <img
                     src={{product.image}}>
             </div>
-            <div class="images">
+
+            <div id="carouselExample" class="carousel slide">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img
+                            src="https://cdn.hoanghamobile.com/i/productlist/dst/Uploads/2022/09/08/44444.png">
+                    </div>
+                    <div class="carousel-item active">
+                        <img
+                            src="https://cdn.hoanghamobile.com/i/productlist/dst/Uploads/2022/09/08/44444.png">
+                    </div>
+                    <div class="carousel-item active">
+                        <img
+                            src="https://cdn.hoanghamobile.com/i/productlist/dst/Uploads/2022/09/08/44444.png">
+                    </div>
+                    <div class="carousel-item active">
+                        <img
+                            src="https://cdn.hoanghamobile.com/i/productlist/dst/Uploads/2022/09/08/44444.png">
+                    </div>
+
+                </div>
+                <button class="carousel-control-prev" type="button"
+                    data-bs-target="#carouselExample" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button"
+                    data-bs-target="#carouselExample" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            <!-- <div class="images">
                 <div class="small-img">
                     <img
                         src="https://cdn.hoanghamobile.com/i/productlist/dst/Uploads/2022/09/08/44444.png"
@@ -48,7 +63,7 @@
                         onclick="showImg(this.src)">
                 </div>
 
-            </div>
+            </div> -->
         </div>
 
         <div class="detailProduct--right">
@@ -95,112 +110,7 @@
                     </svg>
                     <span>{{item.name}}</span><br>
                 </div>
-                <!-- <svg xmlns="http://www.w3.org/2000/svg" style="color: #009981;"
-                    width="16" height="16"
-                    fill="currentColor" class="bi bi-check-lg"
-                    viewBox="0 0 16 16">
-                    <path
-                        d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
-                </svg>
-                <span>Trả góp qua Homepaylater giảm thêm tới 500.000đ, duyệt
-                    nhanh chỉ 30s</span>
-                <br>
-                <svg xmlns="http://www.w3.org/2000/svg" style="color: #009981;"
-                    width="16" height="16"
-                    fill="currentColor" class="bi bi-check-lg"
-                    viewBox="0 0 16 16">
-                    <path
-                        d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
-                </svg>
-                <span>Giảm 100.000đ cho đơn hàng giá trị từ 8.000.000đ trở lên
-                    khi thanh toán qua ZaloPay.</span>
-                <br>
-                <svg xmlns="http://www.w3.org/2000/svg" style="color: #009981;"
-                    width="16" height="16"
-                    fill="currentColor" class="bi bi-check-lg"
-                    viewBox="0 0 16 16">
-                    <path
-                        d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
-                </svg>
-                <span>Thanh toán qua Moca tặng ngay đế sạc trị giá 320.000đ (Cho
-                    hóa đơn có tổng giá trị từ 6 Triệu) -
-                    Số lượng có hạn</span>
-                <br>
-                <svg xmlns="http://www.w3.org/2000/svg" style="color: #009981;"
-                    width="16" height="16"
-                    fill="currentColor" class="bi bi-check-lg"
-                    viewBox="0 0 16 16">
-                    <path
-                        d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
-                </svg>
-                <span>Giảm thêm tới 800.000đ khi mở thẻ tín dụng TPBank EVO -
-                    Duyệt nhanh chỉ 15 phút, LH Cửa hàng hoặc
-                    19002091 để được hỗ
-                    trợ</span>
-                <br>
-                <svg xmlns="http://www.w3.org/2000/svg" style="color: #009981;"
-                    width="16" height="16"
-                    fill="currentColor" class="bi bi-check-lg"
-                    viewBox="0 0 16 16">
-                    <path
-                        d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
-                </svg>
-                <span>Hỗ trợ trả góp 0% qua 26 ngân hàng và công ty tài chính.</span>
-                <br><br>
-                <strong>Ưu đãi đi kèm</strong><br>
-                <svg xmlns="http://www.w3.org/2000/svg" style="color: #009981;"
-                    width="16" height="16"
-                    fill="currentColor" class="bi bi-check-lg"
-                    viewBox="0 0 16 16">
-                    <path
-                        d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
-                </svg>
-                <span>Giảm thêm tới 1.000.000đ khi Thu cũ - Lên đời iPhone 11 |
-                    12 | 13 Series</span>
-                <br>
-                <svg xmlns="http://www.w3.org/2000/svg" style="color: #009981;"
-                    width="16" height="16"
-                    fill="currentColor" class="bi bi-check-lg"
-                    viewBox="0 0 16 16">
-                    <path
-                        d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
-                </svg>
-                <span>Tặng SIM Wintel hoặc SIM MobiFone Hera dung lượng lên tới
-                    6GB/ngày</span>
-                <br>
-                <svg xmlns="http://www.w3.org/2000/svg" style="color: #009981;"
-                    width="16" height="16"
-                    fill="currentColor" class="bi bi-check-lg"
-                    viewBox="0 0 16 16">
-                    <path
-                        d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
-                </svg>
-                <span>Tặng esim data Mobifone Hera 5G (2GB/ngày) (Chưa bao gồm
-                    tháng đầu tiên) - Lưu ý: chỉ áp dụng mua
-                    trực tiếp tại cửa hàng</span>
-                <br><svg xmlns="http://www.w3.org/2000/svg"
-                    style="color: #009981;" width="16" height="16"
-                    fill="currentColor" class="bi bi-check-lg"
-                    viewBox="0 0 16 16">
-                    <path
-                        d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
-                </svg>
-                <span>Giảm thêm 200.000đ cho tất các sản phẩm màn hình khi mua
-                    kèm laptop, MacBook, máy tính bảng và
-                    điện thoại.</span>
-                <br>
-                <svg xmlns="http://www.w3.org/2000/svg" style="color: #009981;"
-                    width="16" height="16"
-                    fill="currentColor" class="bi bi-check-lg"
-                    viewBox="0 0 16 16">
-                    <path
-                        d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
-                </svg>
-                <span>Tiết kiệm lên tới 600.000đ khi mua Microsoft 365 (Office)
-                    kèm Laptop, MacBook, Máy tính bảng, Điện
-                    thoại (Áp dụng từ
-                    10/4/2023 - 31/5/2023).</span>
-                <br> -->
+
             </div>
         </div>
     </section>
@@ -236,17 +146,4 @@
             <strong>Chip xử lý (CPU):</strong><span>Apple A13 Bionic 6 nhân</span><br><br>
         </div>
     </section>
-    <!-- <section>
-        <div class="detaiProduct--SameProduct">
-            <h3>Sản phẩm tương tự</h3>
-        </div>
-
-    </section> -->
-    <!-- <script src="../node_modules/bootstrap/js/dist/bootstrap.min.js"></script>
-    <script>
-        let bigImg = document.querySelector('.big-img img');
-        function showImg(pic) {
-            bigImg.src = pic;
-        }
-    </script> -->
 </body>

@@ -1,0 +1,16 @@
+.wrapper {
+    display: flex;
+    padding: 0 50px;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    box-shadow: 1px 1px 5px #ccc;
+}
+
+.auth h4 {
+    font-size: 16px;
+}
+
+span {
+    color: #666;
+}

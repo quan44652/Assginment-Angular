@@ -1,0 +1,24 @@
+.wrapper {
+    margin: 20px 50px 50px;
+}
+
+.container {
+    background-color: #fff;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+
+
+.header {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+}
+
+.title {
+    color: #666;
+    font-size: 22px;
+    padding-bottom: 20px;
+}

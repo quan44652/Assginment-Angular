@@ -6,20 +6,19 @@ import {HttpClientModule} from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
 import { ClickOutsideModule } from 'ng-click-outside';
 import { ToastrModule, ToastNoAnimation, ToastNoAnimationModule } from 'ngx-toastr';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { DetailComponent } from './pages/detail/detail.component';
-import { IndexComponent } from './admin/produtcs/index/index.component';
-import { AddComponent } from './admin/produtcs/add/add.component';
-import { UpdateComponent } from './admin/produtcs/update/update.component';
+
 import { HeaderComponent } from './components/header/header.component';
 import { CategoryComponent } from './components/category/category.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ProductsComponent } from './components/products/products.component';
-import { LayoutAdminComponent } from './pages/layout-admin/layout-admin.component';
+import { LayoutAdminComponent } from './admin/layout-admin/layout-admin.component';
 import { LayoutClientComponent } from './pages/layout-client/layout-client.component';
 import { SigninComponent } from './components/signin/signin.component';
 import { SignupComponent } from './components/signup/signup.component';
@@ -28,15 +27,25 @@ import { ProductListComponent } from './pages/product-list/product-list.componen
 import { TopNavigateComponent } from './components/top-navigate/top-navigate.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { HeaderAdminComponent } from './admin/components/header-admin/header-admin.component';
+import { NavbarAdminComponent } from './admin/components/navbar-admin/navbar-admin.component';
+import { CategoryAdminComponent } from './admin/category/category-admin/category-admin.component';
+import { ProductAddComponent } from './admin/products/product-add/product-add.component';
+import { ProductAdminComponent } from './admin/products/product-admin/product-admin.component';
+import { ProductEditComponent } from './admin/products/product-edit/product-edit.component';
+import { CategoryAddComponent } from './admin/category/category-add/category-add.component';
+import { CategoryEditComponent } from './admin/category/category-edit/category-edit.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PromotionAddComponent } from './admin/promotion/promotion-add/promotion-add.component';
+import { PromotionAdminComponent } from './admin/promotion/promotion-admin/promotion-admin.component';
+import { PromotionEditComponent } from './admin/promotion/promotion-edit/promotion-edit.component'; 
+import { UserAdminComponent } from './admin/user/user-admin/user-admin.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     DetailComponent,
-    IndexComponent,
-    AddComponent,
-    UpdateComponent,
     HeaderComponent,
     CategoryComponent,
     SliderComponent,
@@ -50,7 +59,19 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     ProductListComponent,
     TopNavigateComponent,
     CartComponent,
-    NotFoundComponent
+    CategoryAddComponent,
+    CategoryEditComponent,
+    NotFoundComponent,
+    HeaderAdminComponent,
+    NavbarAdminComponent,
+    CategoryAdminComponent,
+    ProductAddComponent,
+    ProductAdminComponent,
+    ProductEditComponent,
+    PromotionAddComponent,
+    PromotionAdminComponent,
+    PromotionEditComponent,
+    UserAdminComponent
   ],
   imports: [
     BrowserModule,
@@ -61,6 +82,8 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     ClickOutsideModule,
     ToastrModule.forRoot(),
     ToastNoAnimationModule.forRoot(),
+    BrowserAnimationsModule,
+    NgSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
