@@ -1,10 +1,21 @@
 <div class="wrapper">
     <h1 class="title">Edit Category</h1>
     <div class="container">
-        <form>
+        <form [formGroup]="formValue" (submit)="onSubmit()">
             <div class="mb-3">
                 <label class="form-label">Name Category</label>
-                <input type="text" class="form-control">
+                <input formControlName="name" name="name" type="text"
+                    class="form-control">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Image Category</label>
+                <input formControlName="image" name="image" type="text"
+                    class="form-control">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Link Category</label>
+                <input formControlName="link" name="link" type="text"
+                    class="form-control">
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>

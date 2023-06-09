@@ -1,10 +1,11 @@
 <div class="wrapper">
     <h1 class="title">Edit Promotion</h1>
     <div class="container">
-        <form>
+        <form [formGroup]="formValue" (submit)="onSubmit()">
             <div class="mb-3">
                 <label class="form-label">Name Promotion</label>
-                <input type="text" class="form-control">
+                <input name="name" formControlName="name" type="text"
+                    class="form-control">
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>

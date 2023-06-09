@@ -5,30 +5,29 @@
             <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">First</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Role</th>
                     <th scope="col">Option</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
+                <tr *ngFor="let item of users,let i = index">
+                    <th scope="row">{{i + 1}}</th>
+                    <td>{{item.name}}</td>
+                    <td>{{item.email}}</td>
+                    <td>{{item.role}}</td>
 
-                    <td [width]="150"><button class="btn btn-danger me-3"><fa-icon
-                                [icon]='faTrash'></fa-icon></button><a
-                            [routerLink]><button class="btn btn-success"><fa-icon
-                                    [icon]='faPenToSquare'></fa-icon></button></a></td>
+                    <td [width]="350"><button
+                            (click)="handleRemove(item._id)"
+                            class="btn btn-danger me-3"><fa-icon
+                                [icon]='faTrash'></fa-icon></button><button
+                            *ngIf="item.role == 'member' "
+                            (click)="onClick(item._id)"
+                            class="btn btn-success me-3"><fa-icon
+                                [icon]='faPenToSquare'></fa-icon>Cấp
+                            quyền</button></td>
                 </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td [width]="150"><button class="btn btn-danger me-3"><fa-icon
-                                [icon]='faTrash'></fa-icon></button><a
-                            [routerLink]><button class="btn btn-success"><fa-icon
-                                    [icon]='faPenToSquare'></fa-icon></button></a></td>
-
-                </tr>
-
             </tbody>
         </table>
     </div>

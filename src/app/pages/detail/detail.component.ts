@@ -8,19 +8,19 @@ import { ProductService } from 'src/app/services/product.service';
   styleUrls: ['./detail.component.css']
 })
 export class DetailComponent {
-  id:any = '';
-  product:any = {}
+  id: any = '';
+  product: any = {}
 
-  constructor(private router:ActivatedRoute,
-     private productService:ProductService) {
-    this.router.params.subscribe(({id}) => this.id = id )
+  constructor(private router: ActivatedRoute,
+    private productService: ProductService) {
+      this.getProduct()
   }
 
+  getProduct() {
+    this.router.params.subscribe(({ id }) => this.id = id)
+    this.productService.getProduct(this.id).subscribe(data => {
+      this.product = data
+    })
+  }
 
-ngOnInit () { 
-  this.productService.getProduct(this.id).subscribe(data =>{
-    this.product = data
-    
-  })
-}
 }

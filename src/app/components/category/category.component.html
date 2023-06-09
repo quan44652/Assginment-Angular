@@ -2,7 +2,7 @@
     <ul class="container">
         <li *ngFor="let item of category">
             <a (click)="handleClick(item._id)"
-                [routerLink]="['/',item.link]">
+                [routerLink]="['/',item._id]">
                 <span class="icon">
                     <img
                         src={{item.image}}

@@ -23,6 +23,11 @@ import { PromotionAdminComponent } from './admin/promotion/promotion-admin/promo
 import { UserAdminComponent } from './admin/user/user-admin/user-admin.component';
 
 const routes: Routes = [
+
+  
+  { path: 'signin', component: SigninComponent },
+  { path: 'signup', component: SignupComponent },
+  { path: 'cart', component: CartComponent },
  
   {path: "admin" , component:LayoutAdminComponent, children: [
     {path:"",redirectTo:"admin/products",pathMatch: 'full'},
@@ -37,6 +42,8 @@ const routes: Routes = [
     {path:"promotion/edit/:id",component:PromotionEditComponent},
     {path:"user",component:UserAdminComponent},
   ]},
+
+
   
   { path: '', component: LayoutClientComponent, children: [
     { path: '', component: HomeComponent },
@@ -44,11 +51,10 @@ const routes: Routes = [
     { path: ':category/:id', component: DetailComponent },
   ]},
 
-
-  { path: 'cart', component: CartComponent },
-  { path: 'signin', component: SigninComponent },
-  { path: 'signup', component: SignupComponent },
   { path: '**', component: NotFoundComponent },
+
+
+ 
   
    
 ];

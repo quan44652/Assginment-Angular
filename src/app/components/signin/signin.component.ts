@@ -9,6 +9,14 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./signin.component.css']
 })
 export class SigninComponent {
+
+  token!:string
+  userString!:any
+
+  
+
+
+
   faArrowLeft=faArrowLeft
 
   constructor (private productService:ProductService, private toastr: ToastrService) {
@@ -22,12 +30,10 @@ export class SigninComponent {
 
   onSubmit = () => {
    this.productService.signin(this.user).subscribe((data) => {
-    console.log(data);
-    if(data.message) {
-      console.log(data);
+    if(data.message) { 
       this.toastr.success(data.message,'Chúc mừng');
       console.log(data);
-      
+      localStorage.setItem("user",JSON.stringify(data));
     } 
     else {
       this.toastr.warning(data.error,'Cảnh báo');

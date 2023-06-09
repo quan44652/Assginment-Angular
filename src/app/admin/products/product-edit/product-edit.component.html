@@ -1,41 +1,47 @@
 <div class="wrapper">
-    <h1 class="title">Add Products</h1>
+    <h1 class="title">Edit Products</h1>
     <div class="container">
-        <form>
+        <form [formGroup]="formValue" (submit)="onSubmit()">
             <div class="mb-3">
                 <label class="form-label">Image Sticker </label>
-                <input type="text" class="form-control">
+                <input formControlName="sticker" name="sticker" type="text"
+                    class="form-control">
             </div>
             <div class="mb-3">
                 <label class="form-label">Name Product</label>
-                <input type="text" class="form-control">
+                <input formControlName="name" name="name" type="text"
+                    class="form-control">
             </div>
             <div class="mb-3">
-                <label class="form-label">Price Product</label>
-                <input value="0" min="0" type="number" class="form-control">
+                <label class="form-label">Price New Product</label>
+                <input formControlName="priceNew" name="priceNew" value="0"
+                    min="0" type="number" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Price Old Product</label>
+                <input formControlName="priceOld" name="priceOld" value="0"
+                    min="0" type="number" class="form-control">
             </div>
             <div class="mb-3">
                 <label class="form-label">Image Product </label>
-                <input type="text" class="form-control">
+                <input formControlName="image" name="image" type="text"
+                    class="form-control">
             </div>
             <div class="mb-3">
                 <label class="form-label">Danh mục</label>
-                <select class="form-select" aria-label="Default select example">
-                    <option selected>Open this select menu</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                <select formControlName="categoryId" name="category"
+                    class="form-select" aria-label="Default select example">
+                    <option *ngFor="let item of category" [value]="item._id">{{item.name}}</option>
                 </select>
             </div>
             <div class="mb-3">
                 <label class="form-label">Promotion</label>
                 <ng-select class="form-select" [multiple]="true"
-                    [(ngModel)]="selectedCars">
-                    <ng-option class="ng-option" *ngFor="let car of cars"
-                        [value]="car.id">{{car.name}}</ng-option>
+                    formControlName="promotionId" name="selectPromotion">
+                    <ng-option class="ng-option" *ngFor="let item of promotions"
+                        [value]="item._id">{{item.name}}</ng-option>
                 </ng-select>
             </div>
-            <br />Selected car ID: {{selectedCars | json}}
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>

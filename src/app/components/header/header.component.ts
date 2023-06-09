@@ -27,7 +27,8 @@ onSearch() {
   this.isShown = true
   this.productService.getProducts().subscribe((data) => {
     this.products = data.filter((item: any) => {
-      return item.name.toLowerCase().includes(this.searchValue == "" ? null : this.searchValue.toLowerCase());
+      console.log(item.name.toLowerCase()); 
+      return  (item.name.toLowerCase().includes(this.searchValue == "" ? null : this.searchValue.toLowerCase()));
     });
   });
 }

@@ -4,6 +4,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AppRoutingModule } from './app-router.module';
 import {HttpClientModule} from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { ClickOutsideModule } from 'ng-click-outside';
 import { ToastrModule, ToastNoAnimation, ToastNoAnimationModule } from 'ngx-toastr';
 import { NgSelectModule } from '@ng-select/ng-select';
@@ -83,7 +84,8 @@ import { UserAdminComponent } from './admin/user/user-admin/user-admin.component
     ToastrModule.forRoot(),
     ToastNoAnimationModule.forRoot(),
     BrowserAnimationsModule,
-    NgSelectModule
+    NgSelectModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
