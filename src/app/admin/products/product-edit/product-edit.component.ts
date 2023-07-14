@@ -25,7 +25,6 @@ export class ProductEditComponent {
     this.categoryService.getAllCategory().subscribe((data) => this.category = data)
     this.activeRouter.params.subscribe(({id}) => this.productService.getProduct(id).subscribe((data:any) => {
       this.productCurrent = data
-      console.log(data);
       this.formValue.patchValue({
         sticker: data?.sticker,
         name: data.name,

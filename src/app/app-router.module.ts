@@ -21,6 +21,7 @@ import { PromotionEditComponent } from './admin/promotion/promotion-edit/promoti
 import { PromotionAddComponent } from './admin/promotion/promotion-add/promotion-add.component';
 import { PromotionAdminComponent } from './admin/promotion/promotion-admin/promotion-admin.component';
 import { UserAdminComponent } from './admin/user/user-admin/user-admin.component';
+import { OrderComponent } from './admin/order/order.component';
 
 const routes: Routes = [
 
@@ -41,6 +42,7 @@ const routes: Routes = [
     {path:"promotion/add",component:PromotionAddComponent},
     {path:"promotion/edit/:id",component:PromotionEditComponent},
     {path:"user",component:UserAdminComponent},
+    {path:"order",component:OrderComponent},
   ]},
 
 

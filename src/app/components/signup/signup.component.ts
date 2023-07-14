@@ -22,9 +22,7 @@ export class SignupComponent {
 
   onSubmit = () => {
    this.productService.signup(this.user).subscribe((data) => {
-    console.log(data);
     if(data.message) {
-      console.log(data);
       this.toastr.success(data.message,'Chúc mừng');
     } 
     else {

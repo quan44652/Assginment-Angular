@@ -13,7 +13,8 @@ export class HomeComponent {
     // this.productService.getProductByCategory().subscribe(data => this.products = data
     // )
 
-    this.productService.getProducts().subscribe(data =>
-      this.products = data)
+    this.productService.getProducts().subscribe(data => {
+      this.products = data
+    } )
   }
 }

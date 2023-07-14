@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./header-admin.component.css']
 })
 export class HeaderAdminComponent {
-
+  user!: any;
+  userString!:any
+  
+  ngOnInit () {
+    this.userString = localStorage.getItem('user')
+  
+    if(this.userString !== null) {
+      this.user = JSON.parse(this.userString)
+    }  
+    
+  }
 }

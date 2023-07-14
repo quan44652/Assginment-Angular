@@ -1,7 +1,12 @@
-<app-filter></app-filter>
+<div class="wrapper-filter">
+    <ul class="box-filter">
+        <li><h4 class="title">Lọc danh sách: </h4></li>
+        <li *ngFor="let item of filter" (click)="onClick(item.params)"><p>{{item.name}}</p></li>
+    </ul>
+</div>
 <app-products [products]="products" [moreProduct]="moreProduct"></app-products>
 <div class="paginate">
-    <button *ngIf="products.length > moreProduct" (click)="onPaginate()"
+    <button *ngIf="products.length >= moreProduct" (click)="onPaginate()"
         class="btn">Xem thêm
         sản phẩm</button>
 </div>

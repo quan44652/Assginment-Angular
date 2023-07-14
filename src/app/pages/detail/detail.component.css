@@ -24,6 +24,10 @@ body {
     width: inherit;
 }
 
+.btn-buy {
+    cursor: pointer;
+}
+
 .images {
     display: flex;
     justify-content: space-between;

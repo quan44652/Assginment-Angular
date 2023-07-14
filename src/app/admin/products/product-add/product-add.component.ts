@@ -31,7 +31,6 @@ product = {
 
 onSubmit () {  
   this.productService.addProduct(this.product).subscribe((data:any) => {
-    console.log(data);
     
     if(data.error) {
       this.toastr.warning(data.error,"Cảnh báo")

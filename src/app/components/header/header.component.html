@@ -15,7 +15,7 @@
             <div class="search-result" *ngIf="products.length > 0 && isShown"
                 (clickOutside)="onClickOutside()">
                 <a (click)="onClickHiden()"
-                    [routerLink]="['/category',item._id]"
+                    [href]="'/category/' + item._id"
                     class="search-item"
                     *ngFor="let item of products">
                     <div class="avata">

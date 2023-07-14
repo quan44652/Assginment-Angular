@@ -9,7 +9,7 @@
                 <img
                     src={{product.image}}>
             </div>
-
+            <!-- 
             <div id="carouselExample" class="carousel slide">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
@@ -40,7 +40,7 @@
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
-            </div>
+            </div> -->
             <!-- <div class="images">
                 <div class="small-img">
                     <img
@@ -86,7 +86,8 @@
                     <span>Công ty Tài chính</span><br>
                     <span>Hoặc 0% qua thẻ tín dụng</span>
                 </div>
-                <div class="btn-yellow--buy btn-buy">
+                <div (click)="onAddToCart(product._id, product)"
+                    class="btn-yellow--buy btn-buy">
                     <svg xmlns="http://www.w3.org/2000/svg" width="30"
                         height="30" fill="currentColor"
                         class="bi bi-cart3" viewBox="0 0 16 16">

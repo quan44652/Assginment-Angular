@@ -41,6 +41,7 @@ import { PromotionAddComponent } from './admin/promotion/promotion-add/promotion
 import { PromotionAdminComponent } from './admin/promotion/promotion-admin/promotion-admin.component';
 import { PromotionEditComponent } from './admin/promotion/promotion-edit/promotion-edit.component'; 
 import { UserAdminComponent } from './admin/user/user-admin/user-admin.component';
+import { OrderComponent } from './admin/order/order.component';
 
 @NgModule({
   declarations: [
@@ -72,7 +73,8 @@ import { UserAdminComponent } from './admin/user/user-admin/user-admin.component
     PromotionAddComponent,
     PromotionAdminComponent,
     PromotionEditComponent,
-    UserAdminComponent
+    UserAdminComponent,
+    OrderComponent
   ],
   imports: [
     BrowserModule,

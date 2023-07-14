@@ -4,39 +4,45 @@
         <a routerLink="/"><span><fa-icon [icon]="faChevronLeft"></fa-icon></span>
             Quay lại</a>
     </div>
-    <div class="cart-layout">
+    <div *ngIf="itemList &&itemList.length <= 0" class="no-cart">
+        <img src="../../../assets/images/no-item.png" alt>
+        <h4>Hiện chưa có sản phẩm nào trong giỏ hàng</h4>
+    </div>
+    <div *ngIf=" itemList && itemList.length > 0" class="cart-layout">
         <div class="cart-info">
             <div class="cart-icon">
                 <fa-icon [icon]="faCircleCheck"></fa-icon>
                 <span>Giỏ hàng</span>
             </div>
-            <!-- <div class="no-cart">
-        <img src="../../../assets/images/no-item.png" alt>
-        <h4>Hiện chưa có sản phẩm nào trong giỏ hàng</h4>
-    </div> -->
             <div class="cart-items">
-                <div class="item" *ngFor="let item of products">
+                <div class="item" *ngFor="let item of itemList, let i = index">
+                    <p (click)="onRemoveCart(item._id)" class="remove-item"><fa-icon
+                            [icon]="faXmark"></fa-icon></p>
                     <div class="item-img">
-                        <img
-                            src={{item.image}}
-                            alt>
-                        <h4>{{item.name}}</h4>
-                        <h6>{{item.priceNew | number}}₫</h6>
+                        <img src={{item.productId.image}} alt>
+                        <h4>{{item.productId.name}}</h4>
+                        <h6>{{item.productId.priceNew | number}}₫ <del>{{item.productId.priceOld
+                                | number}}₫</del></h6>
                         <span>số lượng</span>
-                        <input value="2" min="0" type="number">
+                        <input value={{item.quantity}}
+                            min="0" type="number">
                     </div>
 
                     <ul class="item-info">
-                        <li *ngFor="let promotionItem of item.promotionId"><span>KM1</span><p>{{promotionItem}}</p></li>
-
+                        <li
+                            *ngFor="let promotionItem of promotions">
+                            <div
+                                *ngIf="promotions && item.productId.promotionId.includes(promotionItem._id)"><span>KM1</span>
+                                <p>{{promotionItem.name}}</p>
+                            </div>
+                        </li>
                     </ul>
-
                 </div>
             </div>
             <div class="cart-tatol">
-                <h2>Tổng giá trị: 146,950,000 ₫</h2>
+                <h2>Tổng giá trị: {{total | number}} ₫</h2>
                 <h2>Giảm giá: 0 ₫</h2>
-                <h2>Tổng thanh toán: <span>146,950,000 ₫</span></h2>
+                <h2>Tổng thanh toán: <span>{{total | number}} ₫</span></h2>
             </div>
         </div>
         <div class="cart-form">

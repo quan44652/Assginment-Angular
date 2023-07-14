@@ -17,8 +17,6 @@ ngOnInit () {
 
   if(this.userString !== null) {
     this.user = JSON.parse(this.userString)
-    console.log(this.user.accsetToken);
-    
   }  
   
 }
