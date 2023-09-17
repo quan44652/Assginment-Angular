@@ -13,7 +13,6 @@ export class ProductsComponent {
   @Input() products: any = [];
   @Input() moreProduct: any = [];
  ngOnInit = () => {
-  console.log(this.moreProduct);
  }
  
 }

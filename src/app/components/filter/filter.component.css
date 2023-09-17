@@ -20,8 +20,14 @@
     color: #00917a;
 }
 
-.box-filter a {
+.box-filter p {
     text-decoration: none;
     color: #00483d;
     padding-left: 16px;
+    margin-bottom: 4px;
+    cursor: pointer;
+}
+
+.box-filter p:hover {
+    color: #fd475a;
 }

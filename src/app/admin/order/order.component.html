@@ -1,0 +1,32 @@
+<div class="wrapper">
+    <div class="header"><h2 class="title">Orders</h2></div>
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Product</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of cartList,let i = index">
+                    <th scope="row">{{i+1}}</th>
+                    <td>{{item.userId.email}}</td>
+                    <td>{{item.productId.name}}</td>
+                    <td><img width="70px" src={{item.productId.image}} alt></td>
+                    <td>{{item.productId.priceNew | number}} đ</td>
+                    <td>{{item.quantity}}</td>
+                    <td>{{item.status}}</td>
+                    <td>{{item.productId.priceNew * item.quantity | number}} đ</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>

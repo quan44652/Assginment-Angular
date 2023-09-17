@@ -1,0 +1,14 @@
+<div class="wrapper">
+    <h1 class="title">Add Promotion</h1>
+    <div class="container">
+        <form (submit)="onSubmit()">
+            <div class="mb-3">
+                <label class="form-label">Name Promotion</label>
+                <input name="name" [(ngModel)]="promotion.name" type="text"
+                    class="form-control">
+            </div>
+            {{promotion.name | json}}
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>

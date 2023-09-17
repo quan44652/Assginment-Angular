@@ -3,47 +3,6 @@ body {
     margin: 0 auto;
 }
 
-nav {
-    overflow: hidden;
-    font-size: 25px;
-}
-
-.nav-ul-detailProduct {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-
-.nav-ul-detailProduct li {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.nav-ul-detailProduct li p {
-    margin-top: 14px;
-}
-
-.nav-detailProduct {
-    display: block;
-    color: black;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 13px;
-}
-
-.iphone14 {
-    color: #009981;
-}
-
-.nav-detailProduct:hover {
-    color: #009981;
-    cursor: pointer;
-}
-
 .name-detailProduct h1 {
     margin: 20px 0;
     font-size: 20px;
@@ -63,6 +22,10 @@ nav {
 
 .big-img img {
     width: inherit;
+}
+
+.btn-buy {
+    cursor: pointer;
 }
 
 .images {

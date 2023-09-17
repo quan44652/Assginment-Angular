@@ -16,3 +16,38 @@
     color: #004b3f;
     font-weight: bold;
 }
+
+
+.wrapper-filter {
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 24px;
+}
+
+.box-filter {
+    padding: 0 24px;
+    background-color: #fff;
+    box-shadow: 2px 2px 2px #ccc;
+    min-height: 48px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    list-style: none;
+    font-size: 13px;
+}
+
+.title {
+    color: #00917a;
+}
+
+.box-filter p {
+    text-decoration: none;
+    color: #00483d;
+    padding-left: 16px;
+    margin-bottom: 4px;
+    cursor: pointer;
+}
+
+.box-filter p:hover {
+    color: #fd475a;
+}

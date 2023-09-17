@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
-import { faChevronLeft, faCircleCheck } from '@fortawesome/free-solid-svg-icons';
+import { faChevronLeft, faCircleCheck,faXmark } from '@fortawesome/free-solid-svg-icons';
+import { ToastrService } from 'ngx-toastr';
+import { IPromotion } from 'src/app/common';
+import { CartService } from 'src/app/services/cart.service';
+import { PromotionService } from 'src/app/services/promotion.service';
 
 @Component({
   selector: 'app-cart',
@@ -7,69 +11,51 @@ import { faChevronLeft, faCircleCheck } from '@fortawesome/free-solid-svg-icons'
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent {
+
+  constructor (private cartService:CartService, private promotionService:PromotionService, private toastr: ToastrService) {
+    
+  }
+
   faChevronLeft = faChevronLeft
   faCircleCheck = faCircleCheck
+  faXmark=faXmark
 
-  tatol: number = 0
+  itemList:any;
+  promotions!:IPromotion[]
+  total!:number
 
+  user!: any;
+  userString!: any;
+  cart!:any
+  cartString!:any
 
-  products = [
-    {
-      "ad": 1,
-      "sticker": "https://hoanghamobile.com/Content/web/sticker/apple.png",
-      "name": "Điện thoại di động iPhone 14 (128GB) - Chính hãng VN/A",
-      "image": "https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2023/03/31/image-removebg-preview.png",
-      "priceNew": "10190000",
-      "priceOld": "19990000",
-      "promotionId": [
-        "Ưu đãi đến 300.000đ khi mở Ví hoặc thanh toán qua VNPAY", "Giảm thêm tới1.000.000đ khi Thu cũ - Lên đời iPhone 11 | 12 | 13 Series", "Giảm thêm tới 800.000đ khi mở thẻ tín dụng TPBank EVO - Duyệt nhanh chỉ 15 phút, LH Cửa hàng hoặc 19002091 để được hỗ trợ"
-      ],
-      "quality": 2
-    },
-    {
-      "ad": 2,
-      "sticker": "https://hoanghamobile.com/Content/web/sticker/apple.png",
-      "name": "Điện thoại di động iPhone 14 (128GB) - Chính hãng VN/A",
-      "image": "https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2023/03/31/image-removebg-preview.png",
-      "priceNew": "10190000",
-      "priceOld": "19990000",
-      "promotionId": [
-        "Ưu đãi đến 300.000đ khi mở Ví hoặc thanh toán qua VNPAY", "Giảm thêm tới1.000.000đ khi Thu cũ - Lên đời iPhone 11 | 12 | 13 Series", "Giảm thêm tới 800.000đ khi mở thẻ tín dụng TPBank EVO - Duyệt nhanh chỉ 15 phút, LH Cửa hàng hoặc 19002091 để được hỗ trợ"
-      ],
-      "quality": 2
-    },
-    {
-      "ad": 3,
-      "sticker": "https://hoanghamobile.com/Content/web/sticker/apple.png",
-      "name": "Điện thoại di động iPhone 14 (128GB) - Chính hãng VN/A",
-      "image": "https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2023/03/31/image-removebg-preview.png",
-      "priceNew": "10190000",
-      "priceOld": "19990000",
-      "promotionId": [
-        "Ưu đãi đến 300.000đ khi mở Ví hoặc thanh toán qua VNPAY", "Giảm thêm tới1.000.000đ khi Thu cũ - Lên đời iPhone 11 | 12 | 13 Series", "Giảm thêm tới 800.000đ khi mở thẻ tín dụng TPBank EVO - Duyệt nhanh chỉ 15 phút, LH Cửa hàng hoặc 19002091 để được hỗ trợ"
-      ],
-      "quality": 2
-    },
-    {
-      "ad": 4,
-      "sticker": "https://hoanghamobile.com/Content/web/sticker/apple.png",
-      "name": "Điện thoại di động iPhone 14 (128GB) - Chính hãng VN/A",
-      "image": "https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2023/03/31/image-removebg-preview.png",
-      "priceNew": "10190000",
-      "priceOld": "19990000",
-      "promotionId": [
-        "Ưu đãi đến 300.000đ khi mở Ví hoặc thanh toán qua VNPAY", "Giảm thêm tới1.000.000đ khi Thu cũ - Lên đời iPhone 11 | 12 | 13 Series", "Giảm thêm tới 800.000đ khi mở thẻ tín dụng TPBank EVO - Duyệt nhanh chỉ 15 phút, LH Cửa hàng hoặc 19002091 để được hỗ trợ"
-      ],
-      "quality": 2
-    },
-  ]
+  ngOnInit() {
+    this.userString = localStorage.getItem('user')
+    this.user = JSON.parse(this.userString)
+    this.cartString = localStorage.getItem('cartItem')
+    this.cart = JSON.parse(this.cartString)
+    this.promotionService.getAllPromotion().subscribe((data) => {
+      this.promotions = data
+    })
+    if(this.user) {
+      this.cartService.getToCart().subscribe((data:any) => { 
+        this.itemList = data.filter((item:any) => {
+         return this.user.user._id == item.userId._id ? item : null
+        })
+        
+        this.total = this.itemList.reduce((sum:any, item:any) => sum + (item.productId.priceNew * item.quantity), 0);  
+      })
+     }
+     else {
+      this.itemList = this.cart
+     }   
+  }
 
 
-  ngOnInit = () => {
-    this.products.reduce((accumulator, currentValue): any => {
-      console.log(accumulator, currentValue)
-      return
-    }
-    )
+  onRemoveCart = (id:string) => {
+   this.cartService.removeToCart(id).subscribe((data:any) => {
+    this.toastr.success(data.message)
+    this.itemList = this.itemList.filter((item:any) => item._id != id)
+   })
   }
 }
