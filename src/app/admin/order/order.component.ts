@@ -12,7 +12,6 @@ export class OrderComponent {
   
   constructor(private cartService:CartService) {
     this.cartService.getToCart().subscribe((data) => {
-      console.log(data);
       this.cartList = data
       
     })

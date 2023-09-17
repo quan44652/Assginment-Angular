@@ -42,7 +42,6 @@ export class CartComponent {
         this.itemList = data.filter((item:any) => {
          return this.user.user._id == item.userId._id ? item : null
         })
-        console.log(this.itemList);
         
         this.total = this.itemList.reduce((sum:any, item:any) => sum + (item.productId.priceNew * item.quantity), 0);  
       })

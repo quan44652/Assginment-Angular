@@ -65,9 +65,7 @@ export class ProductListComponent {
   
   onClick(params:string) {    
     this.productService.getProducts(params).subscribe((data:any) => {
-        this.products = data.filter((item:any) => item.categoryId._id == this.category ? item : null
-        
-        
+        this.products = data.filter((item:any) => item.categoryId._id == this.category ? item : null 
         )
     }) 
   }
